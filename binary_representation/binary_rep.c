@@ -24,10 +24,6 @@ void* convert_binary(int num, int *lptr, int *ones, int *zeroes){
         i++;
     }
     
-    for(int j=i-1; j>=0; j--)
-        printf("%d ",data[j]);
-    printf("\n");
-    
     *lptr = i-1;
     
     return data;
@@ -35,19 +31,16 @@ void* convert_binary(int num, int *lptr, int *ones, int *zeroes){
 
 int main()
 {
-    printf("Binary conversion\n");
-    int arr[] = {1,2,4,5,6,6};
-    printf("%lu\n",sizeof arr/sizeof arr[0] );
     int num = 5;
     int len = 0;
     int ones=0, zeroes = 0;
     int *ptr = convert_binary(num,&len,&ones, &zeroes);
+    printf(" Binary represenation of num \n");
     for (int i=len; i>=0; i--)
         printf("%d ",ptr[i]);
     printf("\n");
 
     printf("Ones - %d    zeroes: %d\n",ones,zeroes);
-
 
     free(ptr);
 
