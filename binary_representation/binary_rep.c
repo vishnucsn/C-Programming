@@ -10,21 +10,25 @@
 #include <stdlib.h>
 
 
-void* convert_binary(int num, int *lptr, int *ones, int *zeroes){
+void* convert_binary(int num, int *lptr, int *ones, int *zeroes)
+{
     
     int i=0;
     int *data = malloc(20);
-    while(num){
-        data[i] = num%2;
-        if( (num%2) == 0 )
-            *zeroes += 1;
-        else
-            *ones += 1;
-        num = num/2;
-        i++;
-    }
-    
-    *lptr = i-1;
+    if(data != NULL)
+	{
+		while(num)
+		{
+			data[i] = num%2;
+			if( (num%2) == 0 )
+				*zeroes += 1;
+			else
+				*ones += 1;
+			num = num/2;
+			i++;
+		}
+	*lptr = i-1; // Store the length
+	}
     
     return data;
 }
