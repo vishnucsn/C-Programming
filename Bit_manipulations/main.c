@@ -18,7 +18,6 @@ uint8_t getBitValue(uint8_t bit_pos, uint32_t input)
                 ret = bin_arr[i];
                 break;
             }
-        //printf("bin_arr[%d] - %d ",i,bin_arr[i]);
     }
 
     return ret;
@@ -30,18 +29,14 @@ uint32_t update_bit_positions(uint8_t x_pos, uint8_t y_pos, uint32_t input)
 {
     uint8_t temp =0,x_val=0,y_val=0;
 
-    printf("Inpt - %u\n",input);
     x_val = getBitValue(x_pos,input);
     y_val = getBitValue(y_pos,input);
-    printf("x_val - %d  y_val - %d\n",x_val,y_val);
     temp = x_val;
     x_val = y_val;
     y_val = temp;
-    printf("x_val - %d  y_val - %d\n",x_val,y_val);
 
     input &= ~( (1 << x_pos) | (1 << y_pos) ); //clear the bit positions(x_pos and y_pos)
     input |= ( (x_val << x_pos) | (y_val << y_pos) ); //Set the bit positions(x_pos and y_pos) with the desired value(x_val and y_val)
-    printf("Inpt - %d\n",input);
 
     return input;
 }
