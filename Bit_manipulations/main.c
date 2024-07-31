@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdint.h>
-#include <stdbool.h>
 
-
-bool getBitValue(uint8_t bit_pos, uint32_t input)
+uint8_t getBitValue(uint8_t bit_pos, uint32_t input)
 {
-    bool ret = 0;
-    bool bin_arr[32] ={0};
+    uint8_t ret = 0;
+    uint8_t bin_arr[32] ={0};
     for(int i=0; i<=31; i++)
     {
         bin_arr[i] = (input % 2);
@@ -30,7 +28,7 @@ bool getBitValue(uint8_t bit_pos, uint32_t input)
 /*Function which is used to swap the bit values present in the bit positions which are passed as argument*/
 uint32_t update_bit_positions(uint8_t x_pos, uint8_t y_pos, uint32_t input)
 {
-    bool temp =0,x_val=0,y_val=0;
+    uint8_t temp =0,x_val=0,y_val=0;
 
     printf("Inpt - %u\n",input);
     x_val = getBitValue(x_pos,input);
@@ -51,10 +49,8 @@ uint32_t update_bit_positions(uint8_t x_pos, uint8_t y_pos, uint32_t input)
 int main()
 {
     uint32_t input = 0x54,output = 0;
-    //bool val =0;
 
-    
-    
+    printf("Input = %u\n",input);
     output = update_bit_positions(3,6,input);
     printf("output = %d\n",output);
 
