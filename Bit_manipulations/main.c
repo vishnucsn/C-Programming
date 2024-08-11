@@ -1,3 +1,5 @@
+/*This program updates the bit positions based on the parameter passed in the update_bit_positions function.*/
+
 #include <stdio.h>
 #include <stdint.h>
 
