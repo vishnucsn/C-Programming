@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-
+/*Extract the numbers from the array and add it together
+* For eg: "1AB1CD1234xyx56123!"
+* Numbers -> 1 1 1234 56123
+* Add -> 1+1+1234+56123 = 57359
+*/
 char arr[] = "1AB1CD1234xyx56123!";
 char dummy_arr[20];
 int j=0,sum =0,prev=0;
