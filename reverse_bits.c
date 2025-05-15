@@ -22,7 +22,7 @@ void print_binary(uint32_t bin)
 int main()
 {
     
-    for(int i=0; i<8; i++)
+    for(int i=0; i<32; i++)
     {
         n_bin <<= 1;
         n_bin |= !!(bin & (1<<i));
