@@ -5,7 +5,7 @@ char src[100] = "Hello ";
 char *dest = "World";
 
 
-static char* my_str(char *src, char *dest)
+static char* my_str_cat(char *src, char *dest)
 {
 
     char *temp = src + strlen(src); //reach temp to the place 
@@ -25,7 +25,7 @@ int main()
 {
 
     printf("Original - %s\n",src); //Hello 
-    printf("Final -%s\n",my_str(src,dest)); //Hello World
+    printf("Final -%s\n",my_str_cat(src,dest)); //Hello World
 
     return 0;
 }
